@@ -1,3 +1,7 @@
+output "iotcentral_application_network_rule_sets_id" {
+  description = "Map of id values across all iotcentral_application_network_rule_sets, keyed the same as var.iotcentral_application_network_rule_sets"
+  value       = { for k, v in azurerm_iotcentral_application_network_rule_set.iotcentral_application_network_rule_sets : k => v.id }
+}
 output "iotcentral_application_network_rule_sets_apply_to_device" {
   description = "Map of apply_to_device values across all iotcentral_application_network_rule_sets, keyed the same as var.iotcentral_application_network_rule_sets"
   value       = { for k, v in azurerm_iotcentral_application_network_rule_set.iotcentral_application_network_rule_sets : k => v.apply_to_device }
