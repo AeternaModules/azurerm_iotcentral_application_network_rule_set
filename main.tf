@@ -6,7 +6,7 @@ resource "azurerm_iotcentral_application_network_rule_set" "iotcentral_applicati
   default_action            = each.value.default_action
 
   dynamic "ip_rule" {
-    for_each = each.value.ip_rule != null ? [each.value.ip_rule] : []
+    for_each = each.value.ip_rule != null ? each.value.ip_rule : []
     content {
       ip_mask = ip_rule.value.ip_mask
       name    = ip_rule.value.name
