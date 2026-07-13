@@ -13,8 +13,8 @@ EOT
 
   type = map(object({
     iotcentral_application_id = string
-    apply_to_device           = optional(bool)   # Default: true
-    default_action            = optional(string) # Default: "Deny"
+    apply_to_device           = optional(bool)
+    default_action            = optional(string)
     ip_rule = optional(list(object({
       ip_mask = string
       name    = string
